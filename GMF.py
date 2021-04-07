@@ -66,7 +66,7 @@ def get_model(num_users, num_items, latent_dim, regs=[0, 0]):
     prediction = Dense(1, activation='sigmoid',
                        kernel_initializer=initializers.lecun_normal(), name='prediction')(predict_vector)
     
-    model_ = Model(input=[user_input, item_input], output=prediction)
+    model_ = Model([user_input, item_input], prediction)
 
     return model_
 
